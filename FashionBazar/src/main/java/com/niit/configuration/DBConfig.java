@@ -60,6 +60,7 @@ public class DBConfig {
 	            localsessionFactorybuilder.addAnnotatedClass(Cart.class);
 	            localsessionFactorybuilder.addAnnotatedClass(OrderDetail.class);
 	            localsessionFactorybuilder.addAnnotatedClass(CartItem.class);
+	            localsessionFactorybuilder.addAnnotatedClass(Orders.class);
 	            
 	            
 

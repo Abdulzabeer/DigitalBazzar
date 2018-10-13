@@ -15,48 +15,52 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container-fulid">
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 			<!-- Brand/logo -->
-					<a class="navbar-brand" href="#">Digital Bazar</a>
+					<a class="navbar-brand" href="home">Digital Bazar</a>
 				
 
 				<!-- Links -->
 				
 			<c:if test="${!sessionScope.loggedIn}">
-				<ul class="nav navbar-nav">
+				<ul class=" nav navbar-nav">
 					<li class="nav-item">
-					<a class="nav-link" href="home">Home</a>
+					<a class="nav-link" href="home"><span class="glyphicon glyphicon-home">&nbspHome</span></a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="register">Register</a>
+					<a class="nav-link" href="register"><span class="glyphicon glyphicon-user">&nbspRegister</span></a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="aboutus">About Us</a>
+					<a class="nav-link" href="contactus"><span class="glyphicon glyphicon-envelope">&nbspContactUs</span></a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="contactus">Contact Us</a>
+					<a class="nav-link" href="aboutus"><span class="glyphicon glyphicon-info-sign">&nbspAbout Us</span></a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="Login"><span class="glyphicon glyphicon-log-in">&nbspLogin</span></a>
 					</li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right"><li>
-					
-					<a class="nav-link" href="Login"><span class="glyphicon glyphicon-log-in">Login</a>
-					</li></ul>
-					
+				
 					</c:if>					
 					<c:if test="${sessionScope.loggedIn}">
 					<c:if  test="${sessionScope.role=='ROLE_USER'}">
 					<ul class="nav navbar-nav">
-					<li  class="nav-item"><a href="#">Home</a>&nbsp&nbsp&nbsp&nbsp
-					<li class="nav-item"><a href="<c:url value="/productCatalog"/>">Product Catalog</a></li>&nbsp&nbsp&nbsp&nbsp
-					<li class="nav-item"><a href="<c:url value="/ProductDisplay"/>">Product Display</a></li>&nbsp&nbsp&nbsp&nbsp 
-					<li class="nav-item"><a href="<c:url value="/cart"/>">Cart</a> &nbsp&nbsp&nbsp&nbsp
+					<li  class="nav-item">
+					<a class="nav-link" href="home"><span class="glyphicon glyphicon-home">&nbspHome</span></a></li>
+					<li class="nav-item">
+					<a class="nav-link" href="<c:url value="/productCatalog"/>">Product Catalog</a></li>
+					<li class="nav-item">
+					<a class="nav-link" href="<c:url value="/cart"/>"><span class="glyphicon glyphicon-shopping-cart">&nbspMyCart</span></a></li> 
+					<li class="nav-item">
+					<a class="nav-link" href="<c:url value="/myyorder"/>">My Order</a> 
 					</li>
 					</ul>
 					<c:if test="${sessionScope.loggedIn}">
 					<ul class="nav navbar-nav navbar-right">
-					<li><a class="nav-link">Hi ${sessionScope.username}</a></li>
+					<li class="nav-item"><a class="nav-link">Hi ${sessionScope.username}</a></li>
 					<li>
-					<a class="nav-link" href="perform_logout">Logout</a>
+					<a class="nav-link" href="perform_logout"><span class="glyphicon glyphicon-log-out">&nbspLogout</span></a>
 					</li></ul>
 					</c:if>
 					
@@ -65,20 +69,22 @@
                 <c:if test="${sessionScope.loggedIn}">
 				<c:if  test="${sessionScope.role=='admin'}">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Home</a>&nbsp&nbsp&nbsp&nbsp
-					<li><a href="category">Manage Category</a></li>&nbsp&nbsp&nbsp&nbsp
-					<li><a href="product">Manage Product</a></li>&nbsp&nbsp&nbsp&nbsp
-					 <li class="nav-item">
-					<a class="nav-item" href="supplier">Manage Supplier</a>&nbsp&nbsp&nbsp&nbsp
-					</li>
-					<li><a href="<c:url value="/ProductDisplay"/>">Product Display</a></li>&nbsp&nbsp&nbsp&nbsp
-					</ul>
-					<ul class="nav-item"><li>
-					
-					<a class="nav-item" href="perform_logout">LogOut</a>
+					<li class="nav-item">
+					<a class="nav-link" href="home"><span class="glyphicon glyphicon-home">&nbspHome</span></a></li>
+					<li class="nav-item">
+					<a class="nav-link" href="category">Manage Category</a></li>
+					<li class="nav-item">
+					<a class="nav-link"href="product">Manage Product</a></li>
+                    <li class="nav-item">
+					<a class="nav-link" href="supplier">Manage Supplier</a></li>
+					<li class="nav-item">
+					<a class="nav-link" href="perform_logout">
+					<li class="nav-item"><a class="nav-link">Hi ${sessionScope.username}</a></li>
+					<span class="glyphicon glyphicon-log-out">&nbspLogout</span></a>
 					</li></ul>
 				</c:if>	
 				</c:if>				
 			</nav>
+			</div>
 </body>
 </html>

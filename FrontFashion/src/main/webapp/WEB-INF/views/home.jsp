@@ -22,20 +22,24 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+       <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="<c:url value='/resources/images/image1.png' ></c:url>" style="width:100%;">
+        <img src="<c:url value='/resources/images/mobile1.png' ></c:url>" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="<c:url value='/resources/images/image4.jpg' ></c:url>" style="width:100%;">
+        <img src="<c:url value='/resources/images/mobile4.jpg' ></c:url>" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="<c:url value='/resources/images/image3.jpg' ></c:url>" style="width:100%;">
+        <img src="<c:url value='/resources/images/mobile3.jpg' ></c:url>" style="width:100%;">
+      </div>
+       <div class="item">
+        <img src="<c:url value='/resources/images/mobile2.jpg' ></c:url>" style="width:100%;">
       </div>
     </div>
 
@@ -52,40 +56,20 @@
 </div>
 <div class="container">
   <h2>Mobiles</h2>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="iphonex.jpg" target="_blank">
-          <img src="<c:url value='/resources/images/iphonex1.jpg' ></c:url>" alt="iphone" style="width:42%">
-          <div class="caption">
-            <p>Iphone x</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="oneplus6.jpg" target="_blank">
-          <img src="<c:url value='/resources/images/oneplus6.jpg' ></c:url>" alt="oneplus 6" style="width:100%">
-          <div class="caption">
-            <p>one Plus 6</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="samsungj7.jpg" target="_blank">
-          <img src="<c:url value='/resources/images/samsungj7.jpeg' ></c:url>" alt="samsungj7" style="width:100%">
-          <div class="caption">
-            <p>samasung j7</p>
-          </div>
-        </a>
-      </div>
-    </div>
+   <div class="row">
+  <c:forEach items="${productList}" var="product">
+ 
+  <div class="col-md-4">
+  <img src="<c:url value='/resources/images/images${product.productid}.jpg' ></c:url>" width="200 px" height="300 px"/><br />
+  <p>Product Name: ${product.productname}</p><br />
+  <p>Price: ${product.price}</p><br />
+  <p>Quantity: ${product.quantity}</p>
+  <br/>
+  <a href="<c:url value="productDisplay/${product.productid}" />" ><button type="button" class="btn btn-primary">View Product</button></a>
+ </div>
+  </c:forEach>
   </div>
-</div>
-
+  </div>
 </body>
 </html>
     

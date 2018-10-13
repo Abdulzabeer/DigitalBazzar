@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@include file="Header.jsp"%>
-
+ <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="home.jsp"%>
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Home</title>
 </head>
 <body>
-<h2>AdminHome</h2>
+<h2><centre>AdminHome</centre></h2>
+
 </body>
 </html>
