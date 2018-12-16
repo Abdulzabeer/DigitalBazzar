@@ -19,7 +19,6 @@ Languages Used:
 -Hibernate(version:5.2.12)
 -JSP
 -CSS
--JQUERY
 
 Installation:
 -Copy the eclipse (url="http://www.eclipse.org/downloads/packages/release/oxygen/3a/eclipse-ide-java-ee-developers") in C drive program files and create a shortcut for the application.
